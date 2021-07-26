@@ -2,9 +2,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonPink, function (spr
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
             tiles.setTileAt(location, sprites.dungeon.buttonPinkDepressed)
-            story.spriteSayText(sprite, "Don't work harder")
-            pause(200)
-            story.spriteSayText(sprite, "Work smarter")
+            Work_How(sprite)
             tiles.setTileAt(location, sprites.dungeon.buttonPink)
             story.cancelAllCutscenes()
         })
@@ -15,6 +13,21 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.placeOnTile(mySprite, tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Top))
     }
 })
+function Bananas_And_Sticks (mySprite: Sprite) {
+    story.spriteSayText(mySprite, "What do you call 2 bananas?")
+    pause(500)
+    story.spriteSayText(mySprite, "a pair of slippers")
+    pause(1000)
+    story.spriteSayText(mySprite, "these sticks are too (two) long so let's split the in halves so they are one long")
+}
+function Tarts (mySprite: Sprite) {
+    story.spriteSayText(mySprite, "Hello I am the car-tart-gropher!")
+    pause(500)
+    story.spriteSayText(mySprite, "Do you know who was the s-tart of the tart history?")
+    story.spriteSayText(mySprite, "he he he...")
+    story.spriteSayText(mySprite, "that will be  a question you can answer yourself")
+    story.spriteSayText(mySprite, "hahaha")
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile15`, function (sprite, location) {
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
@@ -52,6 +65,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         scene.cameraFollowSprite(mySprite)
     }
 })
+function Need_Door_in_a (mySprite: Sprite) {
+    story.spriteSayText(mySprite, "We need Windows in a building")
+    pause(1000)
+    story.spriteSayText(mySprite, "but we also need door in a (NIDORINA) building")
+}
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite) {
         tiles.placeOnTile(mySprite, tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Left))
@@ -61,9 +79,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
             tiles.setTileAt(location, assets.tile`myTile4`)
-            story.spriteSayText(sprite, "We need Windows in a building")
-            pause(1000)
-            story.spriteSayText(sprite, "but we also need door in a (NIDORINA) building")
+            Need_Door_in_a(sprite)
             tiles.setTileAt(location, assets.tile`myTile3`)
             story.cancelAllCutscenes()
         })
@@ -86,16 +102,18 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.placeOnTile(mySprite, tiles.locationInDirection(tiles.locationOfSprite(mySprite), CollisionDirection.Right))
     }
 })
+function Pokemon_Jokes (mySprite: Sprite) {
+    story.spriteSayText(mySprite, "Y'all are good at dropping GOLDEEN in the comments and i'm always SEAKING the best ideas")
+    pause(200)
+    story.spriteSayText(mySprite, "Thanks for sticking around through for these ONIX-eptable jokes")
+    pause(500)
+    story.spriteSayText(mySprite, "But I hope you have a swHEAT-MOR ning and a beautiful EEVEE-ning")
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
             tiles.setTileAt(location, assets.tile`myTile9`)
-            story.spriteSayText(sprite, "Hello I am the car-tart-gropher!")
-            pause(500)
-            story.spriteSayText(sprite, "Do you know who was the s-tart of the tart history?")
-            story.spriteSayText(sprite, "he he he...")
-            story.spriteSayText(sprite, "that will be  a question you can answer yourself")
-            story.spriteSayText(sprite, "hahaha")
+            Tarts(sprite)
             tiles.setTileAt(location, assets.tile`myTile8`)
             story.cancelAllCutscenes()
         })
@@ -110,25 +128,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile10`, function (sprite, 
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
             tiles.setTileAt(location, assets.tile`myTile11`)
-            story.spriteSayText(sprite, "What do you call 2 bananas?")
-            pause(500)
-            story.spriteSayText(sprite, "a pair of slippers")
-            pause(1000)
-            story.spriteSayText(sprite, "these sticks are too (two) long so let's split the in halves so they are one long")
+            Bananas_And_Sticks(sprite)
             tiles.setTileAt(location, assets.tile`myTile10`)
             story.cancelAllCutscenes()
         })
     }
 })
+function Work_How (mySprite: Sprite) {
+    story.spriteSayText(mySprite, "Don't work harder")
+    pause(200)
+    story.spriteSayText(mySprite, "Work smarter")
+}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.buttonTeal, function (sprite, location) {
     if (controller.A.isPressed()) {
         story.startCutscene(function () {
             tiles.setTileAt(location, sprites.dungeon.buttonTealDepressed)
-            story.spriteSayText(sprite, "Y'all are good at dropping GOLDEEN in the comments and i'm always SEAKING the best ideas")
-            pause(200)
-            story.spriteSayText(sprite, "Thanks for sticking around through for these ONIX-eptable jokes")
-            pause(500)
-            story.spriteSayText(sprite, "But I hope you have a swHEAT-MOR ning and a beautiful EEVEE-ning")
+            Pokemon_Jokes(sprite)
             tiles.setTileAt(location, sprites.dungeon.buttonTeal)
             story.cancelAllCutscenes()
         })
